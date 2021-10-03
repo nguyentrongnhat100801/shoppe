@@ -1,0 +1,237 @@
+:root{
+    --while-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#EE4D2D;
+    --border-color:#DBDBDB;
+    --star-gold-color:#FFCE3E;
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+    --header-sort-bar-height: 46px;
+}
+*{
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+body{
+    margin: 0;
+}
+
+/*animation*/
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-form));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+    
+}
+
+.display-form{
+    display: none !important;
+}
+
+.modal{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    position:fixed;
+    display:flex;
+    animation: fadeIn ease-in 0.2s;
+}
+
+.modal.display-form{
+    display: none;
+}
+
+.modal__overlay{
+    background-color:rgba(0,0,0,0.4);
+    height:100%;
+    width:100%;
+    position: absolute;
+   
+}
+
+.modal__body {
+    margin:auto;
+    position:relative;
+    z-index: 1;
+    --growth-from: 0.7;
+    --growth-to: 1;
+    animation: growth linear .3s;
+}
+
+.btn{
+    min-width:124px;
+    height:34px;
+    border:none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: none;
+    outline:none;
+    cursor: pointer;
+    background-color: var(--while-color);
+    color:var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color:var(--while-color);
+}
+
+.btn.btn--disable{
+    background-color: #999;
+    color:var(--text-color);
+    cursor:default;
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.auth-form.display-form{
+    display:none;
+}
+
+.select-input{
+    background-color:var(--while-color);
+    min-width: 200px;
+    height: 34px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    padding:0 12px;
+    position: relative;
+}
+
+.select-input:hover .select-input__list{
+    display:block;
+}
+
+.select-input__lable{
+    font-size: 1.4rem;
+    color:var(--text-color);
+}
+
+.select-input__icon{
+    font-size:1.4rem;
+    color:rgba(130 130 130);
+    position: relative;
+    top:1px;
+    cursor: pointer;
+}
+
+.select-input__list{
+    position: absolute;
+    top:25px;
+    left:0;
+    right:0;
+    background-color:var(--while-color);
+    list-style: none;
+    border-radius: 2px;
+    padding:8px 16px;
+    display:none;
+    box-shadow: 0 1px 1px #e0e0e0;
+    z-index: 1;
+}
+
+.select-input__link {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color:var(--text-color);
+    display:block;
+    padding :4px;
+}
+.select-input__link:hover{
+    color:var(--primary-color);
+}
+
+/*pagination*/
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    list-style: none;
+}
+
+.pagination-item{
+    margin: 0 12px;
+}
+
+.pagination-item__link{
+    display:block;
+    font-size: 2rem;
+    font-weight: 300;
+    text-decoration: none;
+    min-width: 40px;
+    max-height: 30px;
+    color:#939393;
+    line-height: 30px;
+    text-align: center;
+}
+
+.pagination-item__active .pagination-item__link{
+    color:var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item__active .pagination-item__link:hover{
+    background-color:#ed5c3f;
+}
+
+.pagination-item__icon{
+
+}
